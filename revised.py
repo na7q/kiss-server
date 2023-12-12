@@ -14,11 +14,17 @@ KISS_TFESC = 0xDD
 # Global VARA Socket Variable
 vara_socket = None
 
+vara_ip = "192.168.0.137"
+vara_port = 8200
+
+server_ip = "0.0.0.0"
+server_port = 8201
+
 def initialize_vara_socket():
     global vara_socket
     try:
         vara_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        vara_socket.connect(("0.0.0.0", 8200))  # Replace with the actual VARA server address and port
+        vara_socket.connect((vara_ip, vara_port))  # Replace with the actual VARA server address and port
         print("VARA socket connected.")
     except Exception as e:
         print(f"Error initializing VARA socket: {e}")
@@ -200,7 +206,7 @@ def receive_from_vara(clients_lock, clients):
 
 def start_server():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind(("0.0.0.0", 8201))
+    server.bind((server_ip, server_port))
     server.listen(5)
 
     print("Server listening on port 8201.")
