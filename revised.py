@@ -14,7 +14,7 @@ KISS_TFESC = 0xDD
 # Global VARA Socket Variable
 vara_socket = None
 
-vara_ip = "192.168.0.137"
+vara_ip = "0.0.0.0"
 vara_port = 8200
 
 server_ip = "0.0.0.0"
