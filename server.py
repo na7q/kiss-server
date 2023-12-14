@@ -17,7 +17,7 @@ vara_socket = None
 vara_ip = "0.0.0.0"
 vara_port = 8200
 
-server_ip = "0.0.0.0"
+server_ip = "0.0.0.0" #Bind all IPs. Public and Private
 server_port = 8201
 
 def initialize_vara_socket():
